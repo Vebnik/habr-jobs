@@ -1,12 +1,11 @@
-from src.requests.my_get import my_get
+from src.requests.my_get import My_request
 
 
-TEST_URL = 'https://career.habr.com/vacancies?qid=3&skills%5B%5D=446&type=all'
+TEST_URL = 'https://jsonplaceholder.typicode.com/todos/1'
 
 
 def test_request():
-  data = my_get(TEST_URL)
+  request = My_request(TEST_URL)
+  response = request.get()
 
-  print('data')
-
-  assert isinstance(data, str)
+  assert isinstance(response, str)

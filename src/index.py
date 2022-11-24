@@ -2,6 +2,8 @@ from src.requests.my_get import My_request
 from src.html.html_parser import Html_parser
 from src.tools.config import ROOT_URL
 from src.tools.data_prettier import data_prettier
+import jmespath as jms
+import re
 
 
 def main():
@@ -14,6 +16,6 @@ def main():
   parser = Html_parser(data)
   find_block = parser.get_all_vacancies()
 
-  #prettier data out
+  # prettier data out
   data_prettier(find_block)
 

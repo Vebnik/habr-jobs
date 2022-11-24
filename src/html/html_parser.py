@@ -19,6 +19,8 @@ class Html_parser:
       result = self.soup.find_all('script')
       result = json.loads(result[1].get_text())['vacancies']['list']
 
+      print(result)
+
       return result
     except:
       print('Error in get_all_vacancies')

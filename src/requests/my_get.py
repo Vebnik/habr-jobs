@@ -12,7 +12,7 @@ class My_request:
 
   def get(self) -> str:
     res = req.get(self.url)
-    return res.text if res.ok else f'Code {res.status_code}'
+    return res.text if res.ok else {'Error': f'Code {res.status_code}'}
 
 
   def post(self, data: Request_data) -> str:
