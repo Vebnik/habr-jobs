@@ -1,5 +1,6 @@
 import bs4
 import json
+from src.interface.parsing_data import Parsing_data
 
 
 class Html_parser:
@@ -13,10 +14,12 @@ class Html_parser:
     self.soup = bs4.BeautifulSoup(data, 'html.parser')
 
 
-  def get_all_vacancies(self) -> list[str]:
+  def get_all_vacancies(self) -> list[dict]:
     try:
       result = self.soup.find_all('script')
-      return json.loads(result[1].get_text())['vacancies']['list']
+      result = json.loads(result[1].get_text())['vacancies']['list']
+
+      return result
     except:
       print('Error in get_all_vacancies')
       exit()

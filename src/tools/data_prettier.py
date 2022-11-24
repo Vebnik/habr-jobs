@@ -13,14 +13,17 @@ def data_prettier(data: list[dict]):
     print('-'*30)
     return
 
+
   def _print_sum(data):
     print('-'*30)
     print(f'Всего было найдено: {len(data)}')
     print('-'*30)
     return
 
+
   def get_avg_salary(salary: list[str]):
     return f"Средняя ЗП: {reduce(lambda t, v: int(t) + int(v), salary, 0)/len(salary)}"
+
 
   def prettier(data: list[dict]) -> None:
     
