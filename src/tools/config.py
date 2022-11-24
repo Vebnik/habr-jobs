@@ -1,0 +1,1 @@
+ROOT_URL = 'https://career.habr.com/vacancies?qid=3&skills%5B%5D=446&type=all'
