@@ -1,20 +1,19 @@
-from src.requests.my_get import my_get
+from src.requests.my_get import My_request
 from src.html.html_parser import Html_parser
 from src.tools.config import ROOT_URL
-from src.tools.data_prettier import prettier_data
-import pprint as pp
+from src.tools.data_prettier import data_prettier
 
 
 def main():
 
   # get html pages
-  data = my_get(ROOT_URL)
+  req = My_request(ROOT_URL)
+  data = req.get()
 
   # parsing html for bs4
   parser = Html_parser(data)
   find_block = parser.get_all_vacancies()
 
   #prettier data out
-  prettier_data(find_block)
+  data_prettier(find_block)
 
-  
